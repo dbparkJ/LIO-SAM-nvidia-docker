@@ -1,3 +1,31 @@
+# Changes by changh95
+
+- Dockerize for NVIDIA graphics card
+
+## How to use
+
+1. Open 3 terminals
+2. In each terminal, run the docker container with the command below
+
+```
+docker run -it \
+    --env="DISPLAY=$DISPLAY" \
+    --env="QT_X11_NO_MITSHM=1" \
+    --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" \
+    --env="XAUTHORITY=$XAUTH" \
+    --volume="$XAUTH:$XAUTH" \
+    --runtime=nvidia --gpus=all \
+    --volume="/home/hyunggi/data:/data" --net=host --ipc=host --privileged liosam
+```
+
+3. On the first terminal, run `roscore`
+4. On the second terminal, run `rosparam set use_sim_time true`, and then `rosbag play your-bag.bag -r 3`.
+5. On the last terminal, run `roslaunch lio_sam run.launch`
+
+then you'll get it working.
+
+&nbsp;
+
 # LIO-SAM
 
 **A real-time lidar-inertial odometry package. We strongly recommend the users read this document thoroughly and test the package with the provided dataset first. A video of the demonstration of the method can be found on [YouTube](https://www.youtube.com/watch?v=A0H8CoORZJU).**
