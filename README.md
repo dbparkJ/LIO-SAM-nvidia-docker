@@ -4,6 +4,7 @@
 
 ## How to use
 
+0. ```docker build -t liosam:latest .```
 1. Open 3 terminals
 2. In each terminal, run the docker container with the command below
 
