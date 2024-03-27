@@ -16,7 +16,7 @@ docker run -it \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
     --runtime=nvidia --gpus=all \
-    --volume="/home/hyunggi/data:/data" --net=host --ipc=host --privileged liosam
+    --volume="/home/jm/data:/data" --net=host --ipc=host --privileged liosam
 ```
 
 3. On the first terminal, run `roscore`
