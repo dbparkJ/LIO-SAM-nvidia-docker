@@ -31,10 +31,10 @@ lio_sam:
   lidarMaxRange: 1000.0                       # default: 1000.0, maximum lidar range to be used
 
   # IMU Settings
-  imuAccNoise: 3.9939570888238808e-03
-  imuGyrNoise: 1.5636343949698187e-03
-  imuAccBiasN: 6.4356659353532566e-05
-  imuGyrBiasN: 3.5640318696367613e-05
+  imuAccNoise: 0.00186  # m/s^2
+  imuGyrNoise: 0.000386  # rad/s
+  imuAccBiasN: 0.0000981  # m/s^2
+  imuGyrBiasN: 0.0000388  # rad/s
   imuGravity: 9.80511
   imuRPYWeight: 0.01
 
