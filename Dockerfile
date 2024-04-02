@@ -9,7 +9,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # Dependencies          
 RUN apt-get update -y && \
-    apt-get install -y sudo unzip git libeigen3-dev wget build-essential gdb curl cmake \
+    apt-get install -y sudo unzip git vim libeigen3-dev wget build-essential gdb curl cmake \
     libgtk2.0-dev pkg-config
 RUN apt-get install -y lsb-release &&\
     sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list' &&\
@@ -38,7 +38,7 @@ SHELL ["/bin/bash", "-c"]
 
 RUN mkdir -p ~/catkin_ws/src \
     && cd ~/catkin_ws/src \
-    && git clone https://github.com/changh95/LIO-SAM.git \
+    && git clone https://github.com/dbparkJ/LIO-SAM-nvidia-docker.git \
     && cd .. \
     && source /opt/ros/kinetic/setup.bash \
     && catkin_make
