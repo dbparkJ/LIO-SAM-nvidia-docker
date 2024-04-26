@@ -488,8 +488,8 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Class: rviz/Orbit
-      Distance: 97.43701171875
+      Class: rviz/ThirdPersonFollow
+      Distance: 30
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
@@ -505,9 +505,10 @@ Visualization Manager:
       Name: Current View
       Near Clip Distance: 0.009999999776482582
       Pitch: 1.1253981590270996
-      Target Frame: odom
-      Value: Orbit (rviz)
-      Yaw: 3.3316705226898193
+      Target Frame: lidar_link
+      Value: ThirdPersonFollow (rviz)
+      Yaw: -3
+      Pitch: 0.5
     Saved: ~
 Window Geometry:
   Displays:
