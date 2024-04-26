@@ -5,9 +5,9 @@
 ## How to use
 
 0. ```docker build --no-cache -t liosam:latest .```
-1. Open 3 terminals
+1. Open 2 terminals
 2. In each terminal, run the docker container with the command below
-
+3. On the first terminal
 ```
 docker run -it \
     --env="DISPLAY=$DISPLAY" \
@@ -17,13 +17,19 @@ docker run -it \
     --volume="$XAUTH:$XAUTH" \
     --runtime=nvidia --gpus=all \
     --volume="/home/geonslam/lidar_project/data:/home/data" --net=host --ipc=host --privileged liosam
+
+roslaunch lio_sam run.launch
 ```
+4. On the second terminal
+```
+docker exec -it <container ID> /bin/bash
 
-3. On the first terminal, run `roscore`
-4. On the second terminal, run `rosparam set use_sim_time true`, and then `rosbag play your-bag.bag -r 3`.
-5. On the last terminal, run `roslaunch lio_sam run.launch`
-
-then you'll get it working.
+source /opt/ros/kinetic/setup.bash
+source /root/catkin_ws/devel/setup.bash
+rosparam set use_sim_time true
+rosbag play your-bag.bag -r 3 #if you want to fast you use -r option
+```
+5. And then you'll get it working.
 
 &nbsp;
 
