@@ -7,14 +7,14 @@ lio_sam:
   gpsTopic: "gnss"                   # GPS odometry topic from navsat, see module_navsat.launch file
 
   # Frames
-  lidarFrame: "base_link"
+  lidarFrame: "lidar_bumperLeft"
   baselinkFrame: "base_link"
   odometryFrame: "odom"
   mapFrame: "map"
 
   # GPS Settings
-  useImuHeadingInitialization: false           # if using GPS data, set to "true"
-  useGpsElevation: false                      # if GPS elevation is bad, set to "false"
+  useImuHeadingInitialization: true           # if using GPS data, set to "true"
+  useGpsElevation: true                      # if GPS elevation is bad, set to "false"
   gpsCovThreshold: 2.0                        # m^2, threshold for using GPS data
   poseCovThreshold: 25.0                      # m^2, threshold for using GPS data
   
@@ -64,7 +64,7 @@ lio_sam:
 
   # CPU Params
   numberOfCores: 16                              # number of cores for mapping optimization
-  mappingProcessInterval: 0.01                  # seconds, regulate mapping frequency
+  mappingProcessInterval: 0.15                  # seconds, regulate mapping frequency
 
   # Surrounding map
   surroundingkeyframeAddingDistThreshold: 1.0   # meters, regulate keyframe adding threshold
@@ -123,7 +123,7 @@ ekf_gps:
                 false, false, true,
                 true,  true,  true]
   imu0_differential: false
-  imu0_queue_size: 50 
+  imu0_queue_size: 100 #change double 
   imu0_remove_gravitational_acceleration: true
   # -------------------------------------
   # Odometry (From Navsat):
