@@ -16,7 +16,7 @@ docker run -it \
     --env="XAUTHORITY=$XAUTH" \
     --volume="$XAUTH:$XAUTH" \
     --runtime=nvidia --gpus=all \
-    --volume="/home/geonslam/lidar_project/data:/home/data" --net=host --ipc=host --privileged liosam
+    --volume="/home/geonslam/lidarSLAM_project/data:/home/data" --net=host --ipc=host --privileged liosam
 
 roslaunch lio_sam run.launch
 ```
