@@ -4,7 +4,7 @@ lio_sam:
   pointCloudTopic: "velodyne_points"               # Point cloud data
   imuTopic: "imu/data"                         # IMU data
   odomTopic: "nav_msgs/Odometry"                   # IMU pre-preintegration odometry, same frequency as IMU
-  gpsTopic: "gnss"                   # GPS odometry topic from navsat, see module_navsat.launch file
+  gpsTopic: "nav_msgs/Odometry"                   # GPS odometry topic from navsat, see module_navsat.launch file
 
   # Frames
   lidarFrame: "base_link"
@@ -14,7 +14,7 @@ lio_sam:
 
   # GPS Settings
   useImuHeadingInitialization: true           # if using GPS data, set to "true"
-  useGpsElevation: true                      # if GPS elevation is bad, set to "false"
+  useGpsElevation: false                      # if GPS elevation is bad, set to "false"
   gpsCovThreshold: 2.0                        # m^2, threshold for using GPS data
   poseCovThreshold: 25.0                      # m^2, threshold for using GPS data
   
