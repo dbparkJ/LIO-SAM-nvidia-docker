@@ -28,7 +28,7 @@ lio_sam:
   Horizon_SCAN: 1800                          # lidar horizontal resolution (Velodyne:1800, Ouster:512,1024,2048, Livox Horizon: 4000)
   downsampleRate: 1                           # default: 1. Downsample your data if too many points. i.e., 16 = 64 / 4, 16 = 16 / 1
   lidarMinRange: 2.3                          # default: 1.0, minimum lidar range to be used 바디가 안나올 정도
-  lidarMaxRange: 100.0                       # default: 1000.0, maximum lidar range to be used
+  lidarMaxRange: 200.0                       # default: 1000.0, maximum lidar range to be used
 
   # IMU Settings
   imuAccNoise: 0.005884  # m/s^2  100hz
@@ -103,7 +103,7 @@ navsat:
 
 # EKF for Navsat
 ekf_gps:
-  publish_tf: false
+  publish_tf: true
   map_frame: map
   odom_frame: odom
   base_link_frame: base_link
